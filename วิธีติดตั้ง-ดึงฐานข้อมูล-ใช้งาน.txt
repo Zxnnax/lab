@@ -1,0 +1,31 @@
+  วิธีติดตั้ง
+
+- Clone โปรเจกต์จาก GitHub:
+
+git clone https://github.com/username/Lab.git
+
+- ย้ายโปรเจกต์ไปยังโฟลเดอร์ของ XAMPP:
+
+C:\xampp\htdocs\Lab
+
+- เปิดใช้งาน Apache และ MySQL บน XAMPP.
+
+  การตั้งค่าฐานข้อมูล
+
+- เปิด phpMyAdmin (http://localhost/phpmyadmin)
+
+- สร้างฐานข้อมูลใหม่ (เช่น repair_requests)
+
+- นำเข้าไฟล์ฐานข้อมูล:
+
+   --คลิก Import
+
+   --เลือกไฟล์ database/repair_requests.sql
+
+   --กด Go
+
+  วิธีใช้งาน
+เปิดโปรเจกต์ในเบราว์เซอร์:
+http://localhost/Lab/
+http://localhost:8080/Lab/
+
