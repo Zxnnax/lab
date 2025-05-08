@@ -1,0 +1,394 @@
+/* รีเซ็ตค่าพื้นฐาน */
+*{
+
+  margin : 0;
+  padding : 0;
+  box-sizing : border-box;
+}
+
+/* ตั้งค่าทั่วไปของ body */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f5f5;
+  color: #0c0b0b;
+}
+
+/* ------------------ HEADER ------------------ */
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2D3A41;
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* โลโก้ + ชื่อแบรนด์ */
+.logo-section {
+  display: flex;
+  align-items: center;
+}
+
+.logo-section a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo-section img.logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  margin-right: 10px; /* ให้เว้นนิดนึง */
+}
+
+.logo-section .brand-name {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+
+/* เมนูหลัก */
+.main-menu ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.main-menu ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 500;
+  padding: 8px 12px;
+  transition: 0.2s ease;
+}
+
+.main-menu ul li a:hover {
+  text-decoration: underline;
+  color: #737a83;
+}
+
+/* ส่วนผู้ใช้ + ตะกร้า */
+.user-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-section a {
+  text-decoration: none;
+  color: #ffffff;
+  transition: 0.2s;
+}
+
+.user-section a:hover {
+  color: #737a83;
+}
+
+.cart-link::after {
+  content: ' 🛒';
+}
+
+.login-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #fcfcfc;
+  padding: 15px;
+  border-radius: 10px;
+  width: 250px;
+  top: 40px;
+  z-index: 999;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.dropdown a {
+  color: #111111;
+  display: block;
+  margin: 5px 0;
+  text-decoration: none;
+}
+
+.dropdown.show {
+  display: block;
+}
+
+.dropdown-button {
+  background-color: #d5d9db;
+  color: #2D3A41;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin-bottom: 10px;
+  display: block;
+  text-decoration: none;
+}
+
+.dropdown-button:hover {
+  background-color: #2D3A41;
+  color: #ffffff;
+}
+
+
+
+/* ------------------   Login  ------------------ */
+
+/* ปรับตำแหน่งฟอร์มล็อกอินให้อยู่ตรงกลาง */
+.login-section {
+  width: 500px; /* กำหนดขนาดกล่อง */
+  margin: 100px auto; /* จัดให้อยู่ตรงกลางแนวนอน */
+  padding: 50px;
+  border: 1px solid #ccc;
+  border-radius: 20px ;
+  background-color: #f9f9f9;
+  text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
+}
+
+/* จัดข้อความของ label ให้อยู่ตรงกลาง */
+.login-section label {
+  display: block; /* ทำให้ label เป็นบรรทัดเดียวกัน */
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+/* ปรับปุ่มเข้าสู่ระบบ */
+.login-section button {
+  width: 70%; /* ทำให้ปุ่มกว้างเต็มฟอร์ม */
+  padding: 12px; /* เพิ่มขนาดปุ่ม */
+  background: linear-gradient(135deg, #2d3640, #1a1f24); /* ใส่สีไล่เฉด */
+  color: white; /* ตัวอักษรสีขาว */
+  font-size: 18px; /* ขนาดตัวอักษร */
+  font-weight: bold; /* ทำให้ตัวอักษรหนาขึ้น */
+  border: none; /* เอาเส้นขอบออก */
+  border-radius: 8px; /* ทำให้ปุ่มโค้งมน */
+  cursor: pointer; /* เปลี่ยนเมาส์เป็นรูปมือ */
+  transition: 0.3s ease; /* เพิ่มเอฟเฟกต์เวลา hover */
+}
+
+/* เอฟเฟกต์เมื่อโฮเวอร์ปุ่ม */
+.login-section button:hover {
+  background: linear-gradient(135deg, #0f1216, #15191d); /* เปลี่ยนเฉดสี */
+  transform: scale(1.05); /* ขยายปุ่มเล็กน้อย */
+}
+
+.login-section input[type="email"] {
+  width: 100% !important;
+  padding: 12px !important;
+  margin: 12px 0 15px 0 !important;
+  box-sizing: border-box !important;
+  font-size: 16px !important;
+  border-radius: 6px !important;
+}
+.login-section input[type="password"] {
+  width: 100% !important;
+  padding: 12px !important;
+  margin: 12px 0 15px 0 !important;
+  box-sizing: border-box !important;
+  font-size: 16px !important;
+  border-radius: 6px !important;
+}
+/* เอฟเฟกต์เมื่อคลิกที่ช่องกรอก */
+.login-section input[type="email"]:focus,
+.login-section input[type="password"]:focus {
+  border: 1px solid #000000; /* เปลี่ยนสีขอบให้เด่นขึ้น */
+  outline: none;
+  box-shadow: 0 0 8px rgba(6, 7, 8, 0.5); /* เพิ่มแสงเงา */
+}
+
+/* จัดให้ Label อยู่ด้านบน */
+.login-section label {
+  display: block;  /* ทำให้ label อยู่คนละบรรทัดกับ input */
+  font-size: 16px; /* ปรับขนาดตัวอักษร */
+  font-weight: bold; /* ทำให้ตัวอักษรหนาขึ้น */
+  margin-bottom: 5px; /* เพิ่มช่องว่างระหว่าง label กับช่องกรอก */
+  color: #333; /* เปลี่ยนสีให้ดูชัดขึ้น */
+  text-align: left; /* จัด label ให้อยู่ชิดซ้าย */
+}
+
+/* ปรับปุ่มเข้าสู่ระบบ */
+.login-section button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #051b33, #071627);
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  margin-bottom: 20px; /* เพิ่มระยะห่างด้านล่างปุ่ม */
+}
+
+/* จัดระยะห่างของข้อความด้านล่างปุ่ม */
+.login-section .signup-link {
+  text-align: center;
+  margin-top: 30px; /* เพิ่มช่องว่างด้านบน */
+}
+
+.login-section .signup-link a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.login-section .signup-link a:hover {
+  text-decoration: underline;
+}
+
+
+
+/* ------------------   signup  ------------------ */
+
+
+.signup-section {
+  width: 500px; /* กำหนดขนาดกล่อง */
+  margin: 100px auto;
+  padding: 50px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  background-color: #f9f9f9;
+  text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* เพิ่มเงา */
+}
+
+/* หัวข้อ */
+.signup-section h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* จัด label ให้อยู่ด้านบน */
+.signup-section label {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+  text-align: left; /* ชิดซ้ายเหมือน login */
+}
+
+/* จัดช่องกรอกข้อมูล */
+.signup-section input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1);
+  transition: 0.3s ease;
+}
+
+/* เอฟเฟกต์เมื่อโฟกัสที่ช่องกรอก */
+.signup-section input:focus {
+  border: 1px solid #000000;
+  outline: none;
+  box-shadow: 0 0 8px rgba(6, 7, 8, 0.5);
+}
+
+/* ปรับปุ่มสมัครสมาชิกให้เหมือนปุ่มล็อกอิน */
+.signup-section button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #051b33, #071627);
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  margin-bottom: 20px; /* เพิ่มระยะห่างด้านล่างปุ่ม */
+}
+
+/* เอฟเฟกต์เมื่อ hover ปุ่ม */
+.signup-section button:hover {
+  background: linear-gradient(135deg, #0f1216, #15191d);
+  transform: scale(1.05);
+}
+
+/* ลิงก์ไปหน้าล็อกอิน */
+.signup-section .login-link {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 14px;
+}
+
+.signup-section .login-link a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.signup-section .login-link a:hover {
+  text-decoration: underline;
+}
+
+
+  .product-showcase {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 0 20px;
+  }
+
+  .product-showcase h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+    color: #333;
+  }
+
+  .products {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .product-card {
+    width: 30%;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    padding: 20px;
+  }
+
+  .product-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .product-card h3 {
+    margin-top: 15px;
+    font-size: 20px;
+    color: #222;
+  }
+
+  .product-card p {
+    font-size: 14px;
+    color: #666;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .product-card {
+      width: 100%;
+    }
+  }
+
+  /*เมนู3ขีด*/
+  
